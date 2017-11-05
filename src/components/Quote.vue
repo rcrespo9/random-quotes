@@ -25,10 +25,12 @@ export default {
       fetchJsonp(url, {
         jsonpCallback: 'jsonp',
       })
-      .then((response) => {
-        response.json();
-      }).then((data) => {
-        console.log(data);
+      .then(response => response.json())
+      .then((data) => {
+        const { quoteText, quoteAuthor } = data;
+
+        this.quote = quoteText;
+        this.author = quoteAuthor;
       }).catch((ex) => {
         console.log('parsing failed', ex);
       });
