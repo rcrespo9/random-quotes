@@ -1,10 +1,14 @@
 <template>
-  <blockquote class="quote">
-    <p class="quote__text">{{ quote }}</p>
-    <footer class="quote__footer">
-      <cite class="quote__author">{{ author }}</cite>
-    </footer>
-  </blockquote>
+  <div>
+    <blockquote class="quote">
+      <p class="quote__text">{{ quote }}</p>
+      <footer class="quote__footer">
+        <cite class="quote__author">{{ author }}</cite>
+      </footer>
+    </blockquote>
+
+    <button v-on:click="fetchQuote">Next Quote</button>
+  </div>
 </template>
 
 <script>
