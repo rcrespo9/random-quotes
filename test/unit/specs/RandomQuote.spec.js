@@ -1,8 +1,8 @@
 import Vue from 'vue';
-import Quote from '@/components/Quote';
+import RandomQuote from '@/components/RandomQuote';
 
-describe('Quote.vue', () => {
-  const Constructor = Vue.extend(Quote);
+describe('RandomQuote.vue', () => {
+  const Constructor = Vue.extend(RandomQuote);
   const vm = new Constructor().$mount();
 
   it('should render the correct quote text', () => {

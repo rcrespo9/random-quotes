@@ -1,16 +1,16 @@
 <template>
   <main id="app">
-    <Quote />
+    <RandomQuote />
   </main>
 </template>
 
 <script>
-import Quote from './components/Quote';
+import RandomQuote from './components/RandomQuote';
 
 export default {
   name: 'app',
   components: {
-    Quote,
+    RandomQuote,
   },
 };
 </script>

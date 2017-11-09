@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <blockquote class="quote">
+  <div class="quote">
+    <blockquote class="quote__block">
       <p class="quote__text">{{ quote }}</p>
       <footer class="quote__footer">
         <cite class="quote__author">{{ author }}</cite>
       </footer>
     </blockquote>
 
-    <button v-on:click="fetchQuote">Next Quote</button>
+    <button class="quote__btn" v-on:click="fetchQuote">Next Quote</button>
   </div>
 </template>
 
@@ -15,7 +15,7 @@
 import fetchJsonp from 'fetch-jsonp';
 
 export default {
-  name: 'Quote',
+  name: 'RandomQuote',
   data() {
     return {
       quote: '',
@@ -34,7 +34,7 @@ export default {
         const { quoteText, quoteAuthor } = data;
 
         this.quote = quoteText;
-        this.author = quoteAuthor;
+        this.author = quoteAuthor || 'Unknown';
       }).catch((ex) => {
         console.log('parsing failed', ex);
       });
