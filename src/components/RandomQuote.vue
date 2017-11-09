@@ -7,7 +7,7 @@
       </footer>
     </blockquote>
 
-    <button class="quote__btn" v-on:click="fetchQuote">Next Quote</button>
+    <button class="quote__btn" v-on:click="fetchQuote" type="button">Next Quote</button>
   </div>
 </template>
 
@@ -47,7 +47,31 @@ export default {
 </script>
 
 <style scoped>
-blockquote {
-  color: red;
+.quote {
+  padding: 0 .75rem;
 }
+
+  .quote__block {
+    margin: 0 0 1.777rem;
+  }
+
+    .quote__text {
+      max-width: 31.475rem;
+      margin: 0 0 1.333rem;
+      font-size: 1.777rem;
+      font-weight: 700;
+      line-height: 1.333;
+    }
+
+    .quote__author {
+      font-size: .75rem;
+      font-style: normal;
+      letter-spacing: .075rem;
+      text-transform: uppercase;
+    }
+
+    .quote__author:before {
+      content: "—";
+      margin-right: .317rem;
+    }
 </style>
