@@ -1,5 +1,5 @@
 <template>
-  <main id="app">
+  <main class="page-content" id="app">
     <RandomQuote />
   </main>
 </template>
