@@ -53,25 +53,27 @@ export default {
 
   .quote__block {
     margin: 0 0 1.777rem;
+    font-family: "adriane", Georgia, Times, serif;
+    font-weight: 700;
   }
 
     .quote__text {
-      max-width: 31.475rem;
-      margin: 0 0 1.333rem;
-      font-size: 1.777rem;
-      font-weight: 700;
+      max-width: 41.956rem;
+      margin: 0 0 1.777rem;
+      color: #525252;
+      font-size: 2.368rem;
       line-height: 1.333;
     }
 
     .quote__author {
-      font-size: .75rem;
+      color: #7ebc9f;
+      font-size: 1rem;
       font-style: normal;
       letter-spacing: .075rem;
       text-transform: uppercase;
     }
 
-    .quote__author:before {
-      content: "—";
-      margin-right: .317rem;
-    }
+  .quote__btn {
+    font-family: "neuzeit-grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
 </style>
