@@ -16,6 +16,22 @@ export default {
 </script>
 
 <style>
+html {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 20em) {
+  html {
+    font-size: calc(12px + 8 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 62.5em) {
+  html {
+    font-size: 20px;
+  }
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,8 +39,8 @@ body {
 
 .page-content {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 </style>

@@ -48,16 +48,17 @@ export default {
 
 <style scoped>
 .quote {
+  flex: 1;
   padding: 0 .75rem;
 }
 
   .quote__block {
-    margin: 0 0 1.777rem;
+    max-width: 41.956rem;
+    margin: 0 auto 1.777rem;
     font-family: "adobe-caslon-pro", Georgia, Times, serif;
   }
 
     .quote__text {
-      max-width: 41.956rem;
       margin: 0 0 1.777rem;
       color: #1D1C1D;
       font-size: 2.368rem;
@@ -75,4 +76,5 @@ export default {
       vertical-align: middle;
       margin-right: .238rem;
     }
+
 </style>
