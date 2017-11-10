@@ -1,7 +1,10 @@
 <template>
-  <main class="page-content" id="app">
-    <RandomQuote />
-  </main>
+  <div id="app">
+    <a class="skip-to-quote" href="#random-quote">Skip to quote</a>
+    <main class="page-content" id="app">
+      <RandomQuote />
+    </main>
+  </div>
 </template>
 
 <script>
@@ -33,8 +36,31 @@ html {
 }
 
 body {
+  color: #1D1C1D;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.skip-to-quote {
+  position: absolute;
+  top: auto;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border-bottom: 2px solid;
+  color: inherit;
+  font-size: 1.333rem;
+  text-decoration: none;
+}
+
+.skip-to-quote:focus,
+.skip-to-quote:active {
+  top: 1rem;
+  left: 1rem;
+  width: auto;
+  height: auto;
+  overflow: visible;
 }
 
 .page-content {

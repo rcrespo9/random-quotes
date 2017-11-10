@@ -1,13 +1,15 @@
 <template>
   <div class="quote">
-    <blockquote class="quote__block">
+    <blockquote class="quote__block" id="random-quote" aria-live="polite">
       <p class="quote__text">{{ quote }}</p>
       <footer class="quote__footer">
-        <cite class="quote__author">{{ author }}</cite>
+        <cite class="quote__author"><span class="author__dash" aria-hidden="true">-</span>{{ author }}</cite>
       </footer>
     </blockquote>
 
-    <button class="quote__btn" v-on:click="fetchQuote" type="button">Next Quote</button>
+    <button class="quote__btn" @click="fetchQuote" type="button" aria-label="Next Quote">
+      <img class="btn__img" src="../assets/next-arrow.svg" alt="Arrow pointing to the right">
+    </button>
   </div>
 </template>
 
@@ -48,7 +50,7 @@ export default {
 
 <style scoped>
 .quote {
-  flex: 1;
+  width: 100%;
   padding: 0 .75rem;
 }
 
@@ -60,7 +62,6 @@ export default {
 
     .quote__text {
       margin: 0 0 1.777rem;
-      color: #1D1C1D;
       font-size: 2.368rem;
       line-height: 1.333;
     }
@@ -70,11 +71,30 @@ export default {
       font-style: italic;
     }
 
-    .quote__author:before {
-      content: "-";
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: .238rem;
+      .author__dash {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: .138rem;
+      }
+
+  .quote__btn {
+    position: absolute;
+    bottom: 1.777rem;
+    right: 1.777rem;
+    width: 3.052rem;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    appearance: none;
+  }
+
+  .quote__btn:hover {
+    cursor: pointer;
+  }
+
+    .btn__img {
+      width: 100%;
+      height: auto;
     }
 
 </style>
