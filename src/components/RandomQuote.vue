@@ -1,5 +1,15 @@
 <template>
   <div class="quote">
+		<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<defs>
+				<symbol id="next-arrow" viewBox="0 0 49.12 40">
+					<title id="next-arrow-title">Next Arrow</title>
+					<desc id="next-arrow-desc">Arrow pointing to the right.</desc>
+					<polygon class="cls-1" points="24.88 0 43.38 18.5 0 18.5 0 21.5 43.38 21.5 24.88 40 29.12 40 49.12 20 29.12 0 24.88 0"/>
+				</symbol>
+			</defs>
+		</svg>
+
     <blockquote class="quote__block" id="random-quote" aria-live="polite">
       <p class="quote__text">{{ quote }}</p>
       <footer class="quote__footer">
@@ -8,7 +18,7 @@
     </blockquote>
 
     <button class="quote__btn" @click="fetchQuote" type="button" aria-label="Next Quote">
-      <img class="btn__img" src="../assets/next-arrow.svg" alt="Arrow pointing to the right">
+      <svg class="btn__img" role="img" aria-labelledby="next-arrow-title next-arrow-desc"><use xlink:href="#next-arrow"></use></svg>
     </button>
   </div>
 </template>
@@ -81,20 +91,22 @@ export default {
     position: absolute;
     bottom: 1.777rem;
     right: 1.777rem;
-    width: 3.052rem;
     padding: 0;
     border: none;
     background-color: transparent;
     appearance: none;
+    transition: transform .2s ease-in-out;
   }
 
   .quote__btn:hover {
     cursor: pointer;
+    transform: translateX(.317rem);
   }
 
     .btn__img {
-      width: 100%;
-      height: auto;
+      width: 3.063rem;
+      height: 2.5rem;
+      fill: #444144;
     }
 
 </style>
