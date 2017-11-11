@@ -1,5 +1,9 @@
 <template>
-  <div class="quote">
+	<div class="error" v-if="error">
+		<h1 class="error__text">The random quotes generator is broken.</h1>
+	</div>
+
+  <div class="quote" v-else>
 		<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 			<defs>
 				<symbol id="next-arrow" viewBox="0 0 49.12 40">
@@ -32,6 +36,7 @@ export default {
     return {
       quote: '',
       author: '',
+      error: false,
     };
   },
   methods: {
@@ -48,7 +53,8 @@ export default {
         this.quote = quoteText;
         this.author = quoteAuthor || 'Unknown';
       }).catch((ex) => {
-        console.log('parsing failed', ex);
+        this.error = true;
+        throw new Error(`Parsing failed: ${ex.message}`);
       });
     },
   },
@@ -59,15 +65,27 @@ export default {
 </script>
 
 <style scoped>
-.quote {
+.quote,
+.error {
   width: 100%;
   padding: 0 .75rem;
+  font-family: "adobe-caslon-pro", Georgia, Times, serif;
 }
+
+  .error {
+    text-align: center;
+  }
+
+    .error__text {
+      margin: 0;
+      font-size: 2.368rem;
+      font-weight: 400;
+      line-height: 1.333;
+    }
 
   .quote__block {
     max-width: 41.956rem;
     margin: 0 auto 1.777rem;
-    font-family: "adobe-caslon-pro", Georgia, Times, serif;
   }
 
     .quote__text {
