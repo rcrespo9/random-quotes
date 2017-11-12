@@ -20,13 +20,13 @@ export default {
 
 <style>
 html {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* 320px */
 @media screen and (min-width: 20em) {
   html {
-    font-size: calc(12px + 12 * ((100vw - 320px) / 1280));
+    font-size: calc(16px + 8 * ((100vw - 320px) / 1280));
   }
 }
 
