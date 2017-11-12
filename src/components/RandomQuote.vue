@@ -57,9 +57,18 @@ export default {
         throw new Error(`Parsing failed: ${ex.message}`);
       });
     },
+    fetchNextQuote(e) {
+      const key = e.which || e.keyCode;
+
+      if (key === 39) {
+        this.fetchQuote();
+      }
+    },
   },
   mounted() {
     this.fetchQuote();
+
+    document.addEventListener('keyup', this.fetchNextQuote);
   },
 };
 </script>
