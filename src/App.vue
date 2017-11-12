@@ -23,15 +23,24 @@ html {
   font-size: 12px;
 }
 
+/* 320px */
 @media screen and (min-width: 20em) {
   html {
-    font-size: calc(12px + 8 * ((100vw - 320px) / 680));
+    font-size: calc(12px + 12 * ((100vw - 320px) / 1280));
   }
 }
 
-@media screen and (min-width: 62.5em) {
+/* 1000px */
+@media screen and (min-width: 62.5em ) {
   html {
     font-size: 20px;
+  }
+}
+
+/* 1600px */
+@media screen and (min-width: 100em) {
+  html {
+    font-size: 24px;
   }
 }
 
