@@ -46,6 +46,7 @@ html {
 
 body {
   color: #1D1C1D;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
