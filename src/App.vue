@@ -20,7 +20,7 @@ export default {
 
 <style>
 html {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* 320px */
