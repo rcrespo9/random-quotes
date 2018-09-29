@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     fetchQuote() {
-      const url = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en';
+      const url = '//api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en';
 
       fetchJsonp(url, {
         jsonpCallback: 'jsonp',
@@ -65,9 +65,10 @@ export default {
       }
     },
   },
-  mounted() {
+  created() {
     this.fetchQuote();
-
+  },
+  mounted() {
     document.addEventListener('keyup', this.fetchNextQuote);
   },
 };
